@@ -1,6 +1,5 @@
 import Phaser from 'phaser'
-import { Create } from '@scripts/events/create'
-import { MainScene } from '@scenes/main'
+import { MainScene } from '@scenes/main_scene'
 
 export function AppInitializer ({
   canvasWidth,

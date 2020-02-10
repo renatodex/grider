@@ -2,7 +2,7 @@ export default function ({
   x,
   y,
   size,
-  gameScene,
+  scene,
 }) {
   const bgColor = 0x000000
   const strokeColor = 0x000000
@@ -11,8 +11,8 @@ export default function ({
   const defaultDepth = 2
   var gridReferenceKey = `block_${x},${y}`
 
-  if (!gameScene.children.getByName(gridReferenceKey)) {
-    let cellSquare = gameScene.add.rectangle(x, y, size, size, bgColor)
+  if (!scene.children.getByName(gridReferenceKey)) {
+    let cellSquare = scene.add.rectangle(x, y, size, size, bgColor)
     cellSquare.setOrigin(0);
     cellSquare.setStrokeStyle(strokeSize, strokeColor, strokeAlpha)
     cellSquare.setDepth(defaultDepth)

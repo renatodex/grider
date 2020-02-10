@@ -1,10 +1,10 @@
 export default function({
   x,
   y,
-  gameScene,
+  scene,
 }) {
   var gridReferenceKey = `${x},${y}`
-  let block = gameScene.children.getByName(`block_${gridReferenceKey}`)
+  let block = scene.children.getByName(`block_${gridReferenceKey}`)
 
   if (block) {
     block.destroy();
