@@ -1,3 +1,5 @@
+import { buildGridKey } from '@scripts/util/helpers'
+
 export default function ({
   x,
   y,
@@ -9,15 +11,14 @@ export default function ({
   const strokeSize = 2
   const strokeAlpha = 1
   const defaultDepth = 2
-  var gridReferenceKey = `block_${x},${y}`
 
-  if (!scene.children.getByName(gridReferenceKey)) {
+  if (!scene.children.getByName(buildGridKey(x, y))) {
     let cellSquare = scene.add.rectangle(x, y, size, size, bgColor)
     cellSquare.setOrigin(0);
     cellSquare.setStrokeStyle(strokeSize, strokeColor, strokeAlpha)
     cellSquare.setDepth(defaultDepth)
     cellSquare.setInteractive();
-    cellSquare.name = `block_${x},${y}`
+    cellSquare.name = buildGridKey(x, y)
 
     return cellSquare
   }

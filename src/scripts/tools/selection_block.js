@@ -8,7 +8,7 @@ export default function ({
   const strokeSize = 2
   const strokeAlpha = 1
   const defaultDepth = 2
-  console.log(scene)
+
   let selectionRect = scene.add.rectangle(x, y, size, size).setOrigin(0);
   selectionRect.setStrokeStyle(strokeSize, strokeColor, strokeAlpha)
   selectionRect.setDepth(defaultDepth)

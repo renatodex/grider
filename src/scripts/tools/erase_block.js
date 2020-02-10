@@ -1,10 +1,13 @@
+import { buildGridKey } from '@scripts/util/helpers'
+
 export default function({
   x,
   y,
   scene,
 }) {
-  var gridReferenceKey = `${x},${y}`
-  let block = scene.children.getByName(`block_${gridReferenceKey}`)
+  let block = scene.children.getByName(
+    buildGridKey(x, y)
+  )
 
   if (block) {
     block.destroy();

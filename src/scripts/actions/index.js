@@ -1,13 +1,13 @@
 import drawPaintGrid from '@scripts/tools/paint_grid'
 import drawSelectionBlock from '@scripts/tools/selection_block'
+import { calculateAxisPosition } from '@scripts/util/helpers'
 
 export function clickTool ({ pointer, paintMode, appConfig }) {
   let x = parseInt(pointer.x/appConfig.gridSize)*appConfig.gridSize
   let y = parseInt(pointer.y/appConfig.gridSize)*appConfig.gridSize
-  var gridReferenceKey = `${x},${y}`
 
   let scene = pointer.manager.game.scene.scenes[0]
-  paintMode({ x, y, gridReferenceKey, size: appConfig.gridSize, scene: scene  })
+  paintMode({ x, y, size: appConfig.gridSize, scene: scene  })
 }
 
 // Fired when user moves pointer through the grid
@@ -22,8 +22,8 @@ export function dragTool ({ pointer, paintMode, scene, appConfig }) {
 // Set the Position of the Selection Block
 export function positionSelectionBlock({ pointer, scene, appConfig }) {
   let selectionRect = scene.children.getByName('selectionRect')
-  selectionRect.x = parseInt(pointer.x/appConfig.gridSize)*appConfig.gridSize;
-  selectionRect.y = parseInt(pointer.y/appConfig.gridSize)*appConfig.gridSize;
+  selectionRect.x = calculateAxisPosition(pointer.x, appConfig.gridSize)
+  selectionRect.y = calculateAxisPosition(pointer.y, appConfig.gridSize)
 }
 
 // Create the Selection Block

@@ -6,7 +6,14 @@ export function AppInitializer ({
   canvasHeight,
   gridSize
 }) {
-  var appConfig = {
+  var game = new Phaser.Game({
+      type: Phaser.AUTO,
+      width: canvasWidth,
+      height: canvasHeight,
+      input: { queue: true },
+  });
+
+  game.appConfig = {
     canvasWidth,
     canvasHeight,
     gridSize,
@@ -14,16 +21,7 @@ export function AppInitializer ({
     totalGridY: canvasHeight / gridSize
   }
 
-  var config = {
-      type: Phaser.AUTO,
-      width: appConfig.canvasWidth,
-      height: appConfig.canvasHeight,
-      input: { queue: true },
-  };
-
-  var game = new Phaser.Game(config);
-  game.appConfig = appConfig
   game.scene.add('MainScene', MainScene, true, {});
 
-  return { game, appConfig }
+  return { game }
 }
