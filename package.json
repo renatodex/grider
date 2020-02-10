@@ -9,5 +9,8 @@
   },
   "scripts": {
     "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "phaser": "^3.22.0"
   }
 }

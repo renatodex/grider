@@ -1,12 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  target: 'web',
+  mode: 'development',
   entry: './src/index.js',
   output: {
+    // path: path.resolve('dist'),
+    // filename: 'index.js',
     path: path.resolve('dist'),
-    filename: 'index.js',
-    libraryTarget: 'commonjs2',
+    filename: "index.js",
+    library: "PhaserGridEditor",
+    libraryTarget: "var" //See below
   },
   module: {
     rules: [
@@ -19,5 +23,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js'],
+    alias: {
+      '@initializers': path.resolve(__dirname, 'src/initializers/'),
+      '@scenes': path.resolve(__dirname, 'src/scenes/'),
+      '@scripts': path.resolve(__dirname, 'src/scripts/'),
+    }
   },
 };
