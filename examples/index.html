@@ -4,20 +4,19 @@
     <script src="../dist/index.js"></script>
 </head>
 <body>
+  <div class="app">
+    <canvas id="testecanvas"></canvas>
+  </div>
 
-    <script>
-    const phaserGridEditor = PhaserGridEditor.Main()
-    // let { appConfig, game } = phaserGridEditor.AppInitializer({
-    //   canvasWidth: 400,
-    //   canvasHeight: 300,
-    //   gridSize: 15,
-    // })
-    phaserGridEditor.AppInitializer({
-      canvasWidth: 400,
-      canvasHeight: 300,
-      gridSize: 15,
-    })
-    </script>
+  <script>
+  const phaserGridEditor = PhaserGridEditor.Main()
+  phaserGridEditor.AppInitializer({
+    canvasElement: document.getElementById('testecanvas'),
+    canvasWidth: 400,
+    canvasHeight: 300,
+    gridSize: 20,
+  })
+  </script>
 
 </body>
 </html>
