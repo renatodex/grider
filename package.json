@@ -14,9 +14,11 @@
     "phaser": "^3.22.0"
   },
   "description": "A Grid Editor built on top of Phaser.js",
-  "directories": {
-    "example": "examples"
-  },
+  "files": [
+    "src/",
+    "examples/",
+    "package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/renatodex/phasergrideditor.js.git"
