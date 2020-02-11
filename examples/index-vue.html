@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../dist/phasergrideditor-var.js"></script>
+    <script src="vue.js"></script>
+
+    <style>
+      #editor1, #editor2 {
+        display: inline-block;
+      }
+    </style>
+</head>
+<body>
+  <div id="vue-app">
+    <h1>{{ title }}</h1>
+    <mapeditor name='editor1' width=400 height=300 gridsize=20></mapeditor>
+    <mapeditor name='editor2' width=400 height=300 gridsize=20></mapeditor>
+  </div>
+
+  <script>
+  const MapEditor = Vue.component('MapEditor', {
+    template: `<section :id="this.name"></section>`,
+    props: {
+      name: {
+        type: String
+      },
+      width: {
+        default: 400
+      },
+      height: {
+        default: 300
+      },
+      gridsize: {
+        default: 80
+      }
+    },
+    data: () => {
+      return {
+        gameData: null
+      }
+    },
+    mounted () {
+      // Need to parse to avoid pass reactive values
+      let tempWidth = parseInt(this.width)
+      let tempHeight = parseInt(this.height)
+      let tempGridSize = parseInt(this.gridsize)
+
+      this.$nextTick(() => {
+        this.gameData = PhaserGridEditor.Main().AppInitializer({
+          canvasElement: this.name,
+          canvasWidth: tempWidth,
+          canvasHeight: tempHeight,
+          gridSize: tempGridSize,
+        })
+
+        this.gameData.Game.emitter.on('paint/block', () => {
+          console.log('Draw!')
+        })
+
+        this.gameData.Game.emitter.on('erase/block', () => {
+          console.log('Erase!')
+        })
+      })
+    },
+  })
+
+  new Vue({
+    el: '#vue-app',
+    data: {
+      title: 'My Map Editor',
+    },
+    components: {
+      mapeditor: MapEditor
+    }
+  })
+  </script>
+
+</body>
+</html>

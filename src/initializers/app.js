@@ -7,15 +7,20 @@ export function AppInitializer ({
   canvasHeight,
   gridSize,
 }) {
-  var game = new Phaser.Game({
+  const Emitter = new Phaser.Events.EventEmitter();
+
+  const Game = new Phaser.Game({
       type: Phaser.WEBGL,
       width: canvasWidth,
       height: canvasHeight,
-      canvas: canvasElement,
+      parent: canvasElement,
+      mode: Phaser.DOM.FIT,
       input: { queue: true },
   });
 
-  game.appConfig = {
+  Game.emitter = Emitter
+
+  Game.appConfig = {
     canvasWidth,
     canvasHeight,
     gridSize,
@@ -24,7 +29,7 @@ export function AppInitializer ({
     totalGridY: canvasHeight / gridSize,
   }
 
-  game.scene.add('MainScene', MainScene, true, {});
+  Game.scene.add('MainScene', MainScene, true, {});
 
-  return { game }
+  return { Game, Emitter }
 }

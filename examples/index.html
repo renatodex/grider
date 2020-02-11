@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="../dist/index.js"></script>
+    <script src="../dist/phasergrideditor-var.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <div class="app">
-    <canvas id="testecanvas"></canvas>
   </div>
 
   <script>
   const phaserGridEditor = PhaserGridEditor.Main()
   phaserGridEditor.AppInitializer({
-    canvasElement: document.getElementById('testecanvas'),
+    canvasElement: '.app',
     canvasWidth: 400,
     canvasHeight: 300,
     gridSize: 20,

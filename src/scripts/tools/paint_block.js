@@ -20,6 +20,8 @@ export default function ({
     cellSquare.setInteractive();
     cellSquare.name = buildGridKey(x, y)
 
+    scene.game.emitter.emit('paint/block')
+
     return cellSquare
   }
 }
