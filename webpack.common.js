@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   target: 'web',
   mode: 'production',
-  entry: './src/index.js',
+  entry: './dist/phasergrideditor.js',
   output: {
     // Should be overridden
   },
