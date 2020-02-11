@@ -1,5 +1,5 @@
 {
-  "name": "phaser-grid-editor",
+  "name": "@renatodex/phaser-grid-editor",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,5 +12,24 @@
   },
   "dependencies": {
     "phaser": "^3.22.0"
-  }
+  },
+  "description": "A Grid Editor built on top of Phaser.js",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatodex/phasergrideditor.js.git"
+  },
+  "keywords": [
+    "grid",
+    "editor",
+    "phaser",
+    "canvas"
+  ],
+  "author": "Renato Alves (renatodex@gmail.com)",
+  "bugs": {
+    "url": "https://github.com/renatodex/phasergrideditor.js/issues"
+  },
+  "homepage": "https://github.com/renatodex/phasergrideditor.js#readme"
 }
