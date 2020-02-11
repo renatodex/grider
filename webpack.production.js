@@ -1,14 +1,12 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve('dist'),
-    filename: 'phasergrideditor-var.js',
-    library: "PhaserGridEditor",
-    libraryTarget: 'var'
+    filename: 'phasergrideditor.js',
   },
-  devtool: 'inline-source-map',
 });
