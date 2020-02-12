@@ -1,5 +1,10 @@
 ![](https://user-images.githubusercontent.com/68507/74302582-c6139900-4d35-11ea-916e-1f5c3d960b46.gif)
 
+![](https://img.shields.io/npm/v/@renatodex/grider)
+![](https://img.shields.io/github/issues/renatodex/grider)
+![](https://img.shields.io/github/forks/renatodex/grider)
+![](https://img.shields.io/github/stars/renatodex/grider)
+
 # What is Grider?
 Grider is a Block Editor based on Phaser.JS that allow you to easily draw over a pre-stabilished square grid.
 
