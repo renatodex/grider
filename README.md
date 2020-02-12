@@ -42,7 +42,9 @@ You can find examples of usage in the `example/` folder, but I will give you a b
 </html>
 ```
 
-This will render a very simple Canvas element inside the `div.app` element!
+This will render a very simple Canvas element inside the `div.app` element:
+
+![](https://user-images.githubusercontent.com/68507/74303562-150efd80-4d39-11ea-8d78-29417809217f.png)
 
 # Commands & Tools
 
