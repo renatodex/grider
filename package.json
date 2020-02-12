@@ -1,7 +1,7 @@
 {
   "name": "@renatodex/phaser-grid-editor",
-  "version": "1.0.5",
-  "main": "dist/index.js",
+  "version": "1.0.6",
+  "main": "dist/phasergrideditor.js",
   "license": "MIT",
   "devDependencies": {
     "webpack": "^4.41.5",
