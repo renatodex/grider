@@ -8,5 +8,6 @@ module.exports = merge(common, {
   output: {
     path: path.resolve('dist'),
     filename: 'phasergrideditor.js',
+    libraryTarget: 'commonjs2',
   },
 });
