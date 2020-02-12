@@ -6,8 +6,8 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     path: path.resolve('dist'),
-    filename: 'phasergrideditor-var.js',
-    library: "PhaserGridEditor",
+    filename: 'grider-var.js',
+    library: "Grider",
     libraryTarget: 'var'
   },
   devtool: 'inline-source-map',

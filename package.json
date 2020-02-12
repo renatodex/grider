@@ -1,7 +1,7 @@
 {
-  "name": "@renatodex/phaser-grid-editor",
+  "name": "@renatodex/grider",
   "version": "1.0.7",
-  "main": "dist/phasergrideditor.js",
+  "main": "dist/grider.js",
   "license": "MIT",
   "devDependencies": {
     "webpack": "^4.41.5",
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renatodex/phasergrideditor.js.git"
+    "url": "git+https://github.com/renatodex/grider.git"
   },
   "keywords": [
     "grid",
@@ -32,7 +32,7 @@
   ],
   "author": "Renato Alves (renatodex@gmail.com)",
   "bugs": {
-    "url": "https://github.com/renatodex/phasergrideditor.js/issues"
+    "url": "https://github.com/renatodex/grider/issues"
   },
-  "homepage": "https://github.com/renatodex/phasergrideditor.js#readme"
+  "homepage": "https://github.com/renatodex/grider#readme"
 }

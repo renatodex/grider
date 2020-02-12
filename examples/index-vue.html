@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="../dist/phasergrideditor-var.js"></script>
+    <script src="../dist/grider-var.js"></script>
     <script src="vue.js"></script>
 
     <style>
@@ -46,7 +46,7 @@
       let tempGridSize = parseInt(this.gridsize)
 
       this.$nextTick(() => {
-        this.gameData = PhaserGridEditor.Main().AppInitializer({
+        this.gameData = Grider.Main().AppInitializer({
           canvasElement: this.name,
           canvasWidth: tempWidth,
           canvasHeight: tempHeight,

@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve('dist'),
-    filename: 'phasergrideditor.js',
+    filename: 'grider.js',
     libraryTarget: 'commonjs2',
   },
 });
