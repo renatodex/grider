@@ -28,14 +28,14 @@ You can find examples of usage in the `example/` folder, but I will give you a b
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="../dist/phasergrideditor-var.js"></script>
+  <script src="../dist/grider-var.js"></script>
 </head>
 <body>
   <div class="app"></div>
 
   <script>
-  const phaserGridEditor = PhaserGridEditor.Main()
-  phaserGridEditor.AppInitializer({
+  const grider = Grider.Main()
+  grider.AppInitializer({
     canvasElement: '.app',
     canvasWidth: 400,
     canvasHeight: 300,
