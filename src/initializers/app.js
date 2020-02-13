@@ -27,6 +27,15 @@ export function AppInitializer ({
     canvasElement,
     totalGridX: canvasWidth / gridSize,
     totalGridY: canvasHeight / gridSize,
+    availableColors: [
+      '0x000000',
+      '0xf050c8',
+      '0x1c7fbf',
+      '0x57c445',
+      '0xf04831',
+      '0x962eba'
+    ],
+    selectedColor: '0x000000'
   }
 
   Game.scene.add('MainScene', MainScene, true, {});

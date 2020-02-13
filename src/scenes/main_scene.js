@@ -29,11 +29,33 @@ export class MainScene extends ApplicationScene {
       paintMode = drawPaintBlock
     })
 
+    this.input.keyboard.on('keydown-X', (event) => {
+      this.sceneEssentials.appConfig.selectedColor =
+        this.sceneEssentials.appConfig.availableColors[0]
+    })
+
+    this.input.keyboard.on('keydown-C', (event) => {
+      let i = this.sceneEssentials.appConfig.availableColors.indexOf(
+        this.sceneEssentials.appConfig.selectedColor
+      )
+      let nextColor = this.sceneEssentials.appConfig.availableColors[i + 1]
+      if (nextColor == undefined) {
+        nextColor = this.sceneEssentials.appConfig.availableColors[0]
+      }
+
+      this.sceneEssentials.appConfig.selectedColor = nextColor
+    })
+
     // Register the PointerMove event
     this.input.on('pointermove', (pointer) => {
       dragTool({ pointer, paintMode, ...this.sceneEssentials })
     })
 
     this.game.emitter.emit('scene/ready')
+  }
+
+  update () {
+    let selectionRect = this.children.getByName('selectionRect')
+    selectionRect.setStrokeStyle(2, this.appConfig.selectedColor, 1)
   }
 }

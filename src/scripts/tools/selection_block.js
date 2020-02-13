@@ -4,7 +4,7 @@ export default function ({
   size,
   scene,
 }) {
-  const strokeColor = 0x0000FF
+  const strokeColor = scene.game.appConfig.selectedColor
   const strokeSize = 2
   const strokeAlpha = 1
   const defaultDepth = 2

@@ -7,7 +7,14 @@ export function clickTool ({ pointer, paintMode, appConfig }) {
   let y = parseInt(pointer.y/appConfig.gridSize)*appConfig.gridSize
 
   let scene = pointer.manager.game.scene.scenes[0]
-  paintMode({ x, y, size: appConfig.gridSize, scene: scene  })
+  paintMode({
+    bgColor: appConfig.selectedColor,
+    strokeColor: appConfig.selectedColor,
+    x,
+    y,
+    size: appConfig.gridSize,
+    scene: scene
+  })
 }
 
 // Fired when user moves pointer through the grid
