@@ -58,7 +58,7 @@ This will render a very simple Canvas element inside the `div.app` element:
 
 At Grider, you can use the usefull Drawer class to draw Blocks on the Grid. I will list the available methods here:
 
-### drawAt(options = {})
+### 1.1. drawAt(options = {})
 
 This method allow you to specifiy several options to draw a grid on the screen, you can pass the position `[x, y]`, as well several other options to customize the appearance of your block.
 
@@ -79,7 +79,7 @@ let myBlock = drawer.drawAt({
 As i said, each block on the screen is a normal `Phaser.Rectangle`, but with extra methods.
 Here, i list the extra methods:
 
-### setPositionAtGrid (x, y)
+### 2.1. setPositionAtGrid (x, y)
 
 ```javascript
 myBlock.setPositionAtGrid(0,0)
@@ -97,6 +97,55 @@ You can customize a few options:
 - defaultDepth
 
 Currently, it's not possible to load Sprite Images at the Grid, but I will work on that when i have time.
+
+## 3. Emitter (Events)
+
+The Emitter class allows you to listen to a few actions happening on Grider.
+
+```javascript
+const { Game, Emitter } = grider.AppInitializer({
+  canvasElement: '.app',
+  canvasWidth: 400,
+  canvasHeight: 300,
+  gridSize: 20,
+})
+```
+
+You can obtain the Emitter class as a response from the `AppInitializer` call.
+Once you have the `Emitter` class, you can start listening to the events:
+
+### 3.1. scene/ready
+
+Triggered when the scene loads.
+If you want to Paint blocks programatically at the Grid, every code should be inside the scene/ready method. It's the only way to guarantee that you have all the things in place.
+
+```javascript
+Emitter.on('scene/ready', () => {
+  console.log('Scene is ready')
+})
+```
+
+### 3.2. paint/block
+
+Triggered when a block is painted. It's simple like that.
+If the user try to paint a block in a position of the grid that already has a block, the event will not trigger.
+
+```javascript
+Emitter.on('paint/block', () => {
+  console.log('Block was painted')
+})
+```
+
+### 3.3. erase/block
+
+Triggered when a block is erased. It's simple like that.
+If the user try to erase a block in a position of the grid that don't have a block painted, the event will not trigger.
+
+```javascript
+Emitter.on('erase/block', () => {
+  console.log('Block was erased')
+})
+```
 
 # Commands & Tools
 
