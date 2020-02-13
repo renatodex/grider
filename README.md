@@ -153,6 +153,8 @@ Currently, the Grider Editor only allow you to do the following commands:
 
 - `Draw a Black Block` -> Shortcut `P`
 - `Erase a Block` -> Shortcut `E`
+- `Change Color` -> Shortcut `C`
+- `Reset Color` -> Shortcut `X`
 
 Yes, it's still very simple, but I will update it and add some new fancy tools!
 
