@@ -8,6 +8,7 @@ export class ApplicationScene extends Phaser.Scene {
   create (params = {}) {
     this.appConfig = this.game.appConfig
     this.scene = this
+    this.game.currentScene = this
 
     this.sceneEssentials = {
       appConfig: this.appConfig,

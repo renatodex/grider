@@ -33,5 +33,7 @@ export class MainScene extends ApplicationScene {
     this.input.on('pointermove', (pointer) => {
       dragTool({ pointer, paintMode, ...this.sceneEssentials })
     })
+
+    this.game.emitter.emit('scene/ready')
   }
 }

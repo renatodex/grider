@@ -46,18 +46,20 @@
       let tempGridSize = parseInt(this.gridsize)
 
       this.$nextTick(() => {
-        this.gameData = Grider.Main().AppInitializer({
+        this.grider = new Grider.Main()
+
+        const { Game, Emitter } = this.grider.AppInitializer({
           canvasElement: this.name,
           canvasWidth: tempWidth,
           canvasHeight: tempHeight,
           gridSize: tempGridSize,
         })
 
-        this.gameData.Game.emitter.on('paint/block', () => {
+        Emitter.on('paint/block', () => {
           console.log('Draw!')
         })
 
-        this.gameData.Game.emitter.on('erase/block', () => {
+        Emitter.on('erase/block', () => {
           console.log('Erase!')
         })
       })

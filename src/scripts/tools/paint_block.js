@@ -1,16 +1,15 @@
 import { buildGridKey } from '@scripts/util/helpers'
 
-export default function ({
-  x,
-  y,
-  size,
-  scene,
-}) {
-  const bgColor = 0x000000
-  const strokeColor = 0x000000
-  const strokeSize = 2
-  const strokeAlpha = 1
-  const defaultDepth = 2
+export default function (options) {
+  let scene = options.scene
+  let x = options.x
+  let y = options.y
+  let size = options.size
+  let bgColor = options.bgColor || 0x000000
+  let strokeColor = options.strokeColor || 0x000000
+  let strokeSize = options.strokeSize || 2
+  let strokeAlpha = options.strokeAlpha || 1
+  let defaultDepth = options.defaultDepth || 2
 
   if (!scene.children.getByName(buildGridKey(x, y))) {
     let cellSquare = scene.add.rectangle(x, y, size, size, bgColor)

@@ -34,8 +34,8 @@ You can find examples of usage in the `example/` folder, but I will give you a b
   <div class="app"></div>
 
   <script>
-  const grider = Grider.Main()
-  grider.AppInitializer({
+  const grider = new Grider.Main()
+  const { Game, Emitter } = grider.AppInitializer({
     canvasElement: '.app',
     canvasWidth: 400,
     canvasHeight: 300,
@@ -50,6 +50,53 @@ You can find examples of usage in the `example/` folder, but I will give you a b
 This will render a very simple Canvas element inside the `div.app` element:
 
 ![](https://user-images.githubusercontent.com/68507/74303562-150efd80-4d39-11ea-8d78-29417809217f.png)
+
+
+# Documentation
+
+## 1. Drawer Class
+
+At Grider, you can use the usefull Drawer class to draw Blocks on the Grid. I will list the available methods here:
+
+### drawAt(options = {})
+
+This method allow you to specifiy several options to draw a grid on the screen, you can pass the position `[x, y]`, as well several other options to customize the appearance of your block.
+
+Each block drawn on the screen with the drawAt method returns a normal `Phaser Rectangle`, but with some extra capabilities.
+This is how you draw a block:
+
+```javascript
+let drawer = grider.Drawer()
+let myBlock = drawer.drawAt({
+  position: [1, 2],
+  bgColor: '0xff0000',
+  strokeColor: '0xff0000',
+})
+```
+
+## 2. Grider Rectangle
+
+As i said, each block on the screen is a normal `Phaser.Rectangle`, but with extra methods.
+Here, i list the extra methods:
+
+### setPositionAtGrid (x, y)
+
+```javascript
+myBlock.setPositionAtGrid(0,0)
+```
+
+This will use your current Grid setup to properly position your block on the correct grid square.
+You don't need to pass the grid size or anything, everything is already stored in your Grider instance.
+
+You can customize a few options:
+
+- bgColor
+- strokeColor
+- strokeSize
+- strokeAlpha
+- defaultDepth
+
+Currently, it's not possible to load Sprite Images at the Grid, but I will work on that when i have time.
 
 # Commands & Tools
 

@@ -7,12 +7,21 @@
   <div class="app"></div>
 
   <script>
-  const grider = Grider.Main()
-  grider.AppInitializer({
+  const grider = new Grider.Main()
+  const { Game, Emitter } = grider.AppInitializer({
     canvasElement: '.app',
     canvasWidth: 400,
     canvasHeight: 300,
     gridSize: 20,
+  })
+
+  Emitter.on('scene/ready', () => {
+    let drawer = grider.Drawer()
+    let myBlock = drawer.drawAt({
+      position: [1, 2],
+      bgColor: '0xff0000',
+      strokeColor: '0xff0000',
+    })
   })
   </script>
 

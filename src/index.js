@@ -1,8 +1,9 @@
 import { ToolsInitializer } from '@initializers/tools'
 import { AppInitializer } from '@initializers/app'
+import { Drawer } from '@scripts/util/drawer'
 
-export function Main () {
-  function debug () {
+export class Main {
+  debug () {
     game.scene
     .getScenes(true)[0]
     .load.setBaseURL()
@@ -16,5 +17,16 @@ export function Main () {
     .start();
   }
 
-  return { AppInitializer, ToolsInitializer }
+  AppInitializer (options) {
+    this.grider = AppInitializer(options)
+    return this.grider
+  }
+
+  ToolsInitializer (options) {
+    ToolsInitializer()
+  }
+
+  Drawer () {
+    return Drawer(this.grider)
+  }
 }
