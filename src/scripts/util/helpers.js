@@ -3,5 +3,5 @@ export function buildGridKey (x, y) {
 }
 
 export function calculateAxisPosition (pixelAxisAmount, gridSize) {
-  parseInt(pixelAxisAmount/gridSize)*gridSize
+  return parseInt(pixelAxisAmount/gridSize)*gridSize
 }
