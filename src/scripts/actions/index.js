@@ -1,6 +1,7 @@
 import drawPaintGrid from '@scripts/tools/paint_grid'
 import drawSelectionBlock from '@scripts/tools/selection_block'
-import { calculateAxisPosition } from '@scripts/util/helpers'
+import { calculateAxisPosition, buildGridKey } from '@scripts/util/helpers'
+import { AvailableColors } from '@scripts/util/colors'
 
 export function clickTool ({ pointer, paintMode, appConfig }) {
   let x = parseInt(pointer.x/appConfig.gridSize)*appConfig.gridSize
@@ -9,7 +10,7 @@ export function clickTool ({ pointer, paintMode, appConfig }) {
   let scene = pointer.manager.game.scene.scenes[0]
   paintMode({
     bgColor: appConfig.selectedColor,
-    strokeColor: appConfig.selectedColor,
+    strokeColor: AvailableColors.WALL_COLOR,
     x,
     y,
     size: appConfig.gridSize,

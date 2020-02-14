@@ -10,7 +10,7 @@ export function empowerBlock ({ block, Game }) {
   return block
 }
 
-export function Drawer ({ Game, Emitter }) {
+export function Drawer ({ Game }) {
   const drawAt = function ({ position, bgColor, strokeColor }) {
     return empowerBlock({
       block: PaintBlock({
@@ -23,6 +23,10 @@ export function Drawer ({ Game, Emitter }) {
       }),
       Game: Game
     })
+  }
+
+  const getBlockAt = function ({ position }) {
+    // return Game.currentScene
   }
 
   return {

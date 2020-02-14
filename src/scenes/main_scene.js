@@ -21,6 +21,14 @@ export class MainScene extends ApplicationScene {
       clickTool ({ pointer, paintMode, ...this.sceneEssentials })
     })
 
+    this.input.keyboard.on('keydown-PLUS', (event) => {
+      this.appConfig.coverBorders = true
+    })
+
+    this.input.keyboard.on('keydown-MINUS', (event) => {
+      this.appConfig.coverBorders = false
+    })
+
     this.input.keyboard.on('keydown-E', function (event) {
       paintMode = eraseBlock
     })

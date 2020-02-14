@@ -1,12 +1,14 @@
+import { AvailableColors, OtherColors } from '@scripts/util/colors'
+
 export default function ({
   x,
   y,
   size,
   scene,
 }) {
-  const bgColor = 0x1099bb
-  const strokeColor = 0xc9d7c2
-  const strokeSize = 2
+  const bgColor = scene.appConfig.bgColor || OtherColors.FLOOR_COLOR
+  const strokeColor = scene.appConfig.strokeColor || OtherColors.FLOOR_STROKE_COLOR
+  const strokeSize = scene.appConfig.strokeSize || 2
   const strokeAlpha = 1
   const defaultDepth = 0
 

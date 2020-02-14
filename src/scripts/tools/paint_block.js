@@ -6,8 +6,16 @@ export default function (options) {
   let y = options.y
   let size = options.size
   let bgColor = options.bgColor || 0x000000
-  let strokeColor = options.strokeColor || 0x000000
-  let strokeSize = options.strokeSize || 2
+
+  // let strokeColor = scene.game.selectedColor || options.strokeColor || 0xc9d7c2
+  let strokeColor;
+  if (scene.appConfig.coverBorders) {
+    strokeColor = scene.appConfig.selectedColor
+  } else {
+    strokeColor = options.strokeColor || 0xc9d7c2
+  }
+
+  let strokeSize = 2
   let strokeAlpha = options.strokeAlpha || 1
   let defaultDepth = options.defaultDepth || 2
 

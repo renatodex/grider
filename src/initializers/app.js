@@ -1,11 +1,14 @@
 import Phaser from 'phaser'
 import { MainScene } from '@scenes/main_scene'
+import { AvailableColors } from '@scripts/util/colors'
 
 export function AppInitializer ({
   canvasElement,
   canvasWidth,
   canvasHeight,
   gridSize,
+  bgColor,
+  strokeColor
 }) {
   const Emitter = new Phaser.Events.EventEmitter();
 
@@ -14,28 +17,25 @@ export function AppInitializer ({
       width: canvasWidth,
       height: canvasHeight,
       parent: canvasElement,
-      mode: Phaser.DOM.FIT,
-      input: { queue: true },
+      mode: Phaser.DOM.FIT
   });
 
   Game.emitter = Emitter
 
+  let availableColors = Object.values(AvailableColors)
+
   Game.appConfig = {
+    totalGridX: canvasWidth / gridSize,
+    totalGridY: canvasHeight / gridSize,
+    availableColors: availableColors,
+    selectedColor: availableColors[0],
+    coverBorders: false,
     canvasWidth,
     canvasHeight,
     gridSize,
     canvasElement,
-    totalGridX: canvasWidth / gridSize,
-    totalGridY: canvasHeight / gridSize,
-    availableColors: [
-      '0x000000',
-      '0xf050c8',
-      '0x1c7fbf',
-      '0x57c445',
-      '0xf04831',
-      '0x962eba'
-    ],
-    selectedColor: '0x000000'
+    bgColor,
+    strokeColor,
   }
 
   Game.scene.add('MainScene', MainScene, true, {});
