@@ -6,7 +6,11 @@
 ![](https://img.shields.io/github/stars/renatodex/grider)
 
 # What is Grider?
-Grider is a Block Editor based on Phaser.JS that allow you to easily draw over a pre-stabilished square grid.
+Grider is a Block Editor based on Phaser.JS specifically designed for drawing TableTop Dungeon Maps.
+
+This is what you can accomplish with Grider:
+
+![](https://user-images.githubusercontent.com/68507/74504467-0bb99880-4ed3-11ea-9e8b-0d4801c60bb0.png)
 
 # Instalation
 As easy as:
@@ -157,6 +161,14 @@ Currently, the Grider Editor only allow you to do the following commands:
 - `Reset Color` -> Shortcut `X`
 
 Yes, it's still very simple, but I will update it and add some new fancy tools!
+
+# Colors and Meanings
+
+Grider was built with a mindset of creating a Standard template for Dungeon maps. You will have a limited set of Colors when working with Grider, but this is something you can totally customize.
+
+These are the colors and what they mean.
+
+![colors](https://user-images.githubusercontent.com/68507/74504837-46700080-4ed4-11ea-895f-fdfb0430f76b.gif)
 
 # Contribute
 
