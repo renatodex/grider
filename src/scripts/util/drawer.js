@@ -25,11 +25,16 @@ export function Drawer ({ Game }) {
     })
   }
 
+  const exportToBase64 = function () {
+    return Game.exportToBase64()
+  }
+
   const getBlockAt = function ({ position }) {
     // return Game.currentScene
   }
 
   return {
-    drawAt
+    drawAt,
+    exportToBase64,
   }
 }

@@ -15,4 +15,12 @@ export class ApplicationScene extends Phaser.Scene {
       scene: this.scene
     }
   }
+
+  exportToBase64 () {
+    return new Promise((resolve, reject) => {
+      this.game.renderer.snapshot((data) => {
+        resolve(data.src)
+      })
+    })
+  }
 }

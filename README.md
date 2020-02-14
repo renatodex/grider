@@ -78,6 +78,18 @@ let myBlock = drawer.drawAt({
 })
 ```
 
+### 1.2. exportToBase64()
+This allow you to export a screenshot of what's happening on your Canvas to whatever you want.
+The result is returned as a `data/image:base64`, and you can add it to the page using dom, or send it to your Backend system.
+Oh, and this method returns a Promise!
+
+```javascript
+let drawer = grider.Drawer()
+drawer.exportToBase64().then((dataimage64) => {
+  console.log(dataimage64)
+})
+```
+
 ## 2. Grider Rectangle
 
 As i said, each block on the screen is a normal `Phaser.Rectangle`, but with extra methods.
