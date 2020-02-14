@@ -168,7 +168,8 @@ Grider was built with a mindset of creating a Standard template for Dungeon maps
 
 These are the colors and what they mean.
 
-![colors](https://user-images.githubusercontent.com/68507/74504837-46700080-4ed4-11ea-895f-fdfb0430f76b.gif)
+<img src="https://user-images.githubusercontent.com/68507/74504837-46700080-4ed4-11ea-895f-fdfb0430f76b.gif" width="400">
+
 
 # Contribute
 
