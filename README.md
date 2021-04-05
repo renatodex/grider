@@ -171,6 +171,8 @@ Currently, the Grider Editor only allow you to do the following commands:
 - `Erase a Block` -> Shortcut `E`
 - `Change Color` -> Shortcut `C`
 - `Reset Color` -> Shortcut `X`
+- `Enable Border Cover Mode` -> Shortcut `+`
+- `Disable Border Cover Mode` -> Shortcut `-`
 
 Yes, it's still very simple, but I will update it and add some new fancy tools!
 
